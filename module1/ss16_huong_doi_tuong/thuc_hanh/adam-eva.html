@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class traiCay{
+        constructor(name,weight) {
+            this.name= name;
+            this.weight= weight
+        }
+    }
+    class human{
+        constructor(name, weight, gender) {
+            this.name= name;
+            this.weight= weight;
+            this.gender= gender;
+        }
+        kiemTraTao(taoObj){
+            console.log('tao nang '+taoObj.weight)
+        }
+        eat(taoObj){
+            this.weight++;
+            taoObj.weight--;
+            console.log('can nang cua '+this.name+ ' la '+this.weight+ ' '+ taoObj.name+' nang '+taoObj.weight)
+        }
+        say(tinnhan){
+            console.log(this.name+': '+ tinnhan)
+        }
+    }
+    let Apple=new traiCay('táo', 10)
+    let Adam= new human('Adam', 60, 'male')
+    let Eva= new human('Eva', 60, 'female')
+    Adam.kiemTraTao(Apple)
+    Adam.say('Ăn táo em ơi');
+    Adam.eat(Apple)
+    Eva.say('Em ra đây')
+</script>
+</body>
+</html>

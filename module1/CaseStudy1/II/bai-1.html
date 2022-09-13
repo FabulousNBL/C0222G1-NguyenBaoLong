@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=parseInt(prompt('Nhập lương'))
+    let tax
+    let receive
+    if (a>=15000000){
+        tax= a*20/100
+        receive=a-tax
+    }else if (a<15000000&& a>=7000000){
+        tax=a*10/100
+        receive=a-tax
+    }else if (a<7000000){
+        tax = a*5/100
+        receive= a- tax
+    }
+    console.log(tax)
+    console.log(receive)
+</script>
+</body>
+</html>

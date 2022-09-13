@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function findStar(star) {
+        let a=['Polaris','Aldenbara','Deneb','Vega','Altair','Dubhe','Regulus']
+        let b=['Ursa Minor','Tarurus','Cygnus','Lyra','Aquira','Ursa Major','Leo']
+            if (a.indexOf(star)!==-1)
+                return b[a.indexOf(star)]
+            else return "không tìm ra"
+            }
+
+        let string=prompt()
+        alert(findStar(string))
+</script>
+</body>
+</html>

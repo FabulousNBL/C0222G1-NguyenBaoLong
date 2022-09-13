@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n= prompt("Enter the celsius: ")
+    while (true){
+        if (n>100){
+            alert("Please decrease the celsius")
+            n= parseInt(prompt("Enter the celsius: "))
+        }else if (n<20){
+            alert('Please increase the celsius ')
+            n= parseInt(prompt("Enter the celsius: "))
+        }else break;
+    }
+</script>
+</body>
+</html>

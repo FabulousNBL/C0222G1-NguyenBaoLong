@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let a = prompt('ten dong vat')
+    // let b = [
+    // ['dog','cat',"pig",'bird','fish'],
+    //     ['cho','meo','heo','chim','ca'],
+    // ]
+    // for(let i = 0; i < b[0].length; i++) {
+    // //     if (b[0][i]===a) {
+    // //         alert(b[1][i])
+    // //     } else if (b[1][i]===a) {
+    // //         alert(b[0][i])
+    // //     } else alert('khong co trong tu dien')
+    // //         break;
+    // //
+    // // }
+    //     if (b[0][i]===a){
+    //         alert(b[1][i])
+    //     }else if (b[1][i]===a) {
+    //         alert(b[0][i])
+    //     } else alert('Khong co trong tu dien')
+    //     break;
+    // }
+    let animals = [
+        ['dog', 'cat', 'duck', 'chicken', 'tiger', 'elephant', 'pig', 'cow', 'hourse', 'bird'],
+        ['cho', 'meo', 'vit', 'ga', 'ho', 'voi', 'heo', 'bo', 'ngua', 'chim'],
+    ]
+    let b = prompt('ten dong vat').toLowerCase()
+    let flag = false
+    for (let i = 0; i < animals[0].length; i++) {
+        if (animals[0][i] === b) {
+            alert(animals[1][i])
+            flag = true
+        } else if (animals[1][i] === b) {
+            alert(animals[0][i])
+            flag = true
+        }
+    }
+    if (!flag) {
+        alert('khong co trong tu dien')
+    }
+</script>
+</body>
+</html>

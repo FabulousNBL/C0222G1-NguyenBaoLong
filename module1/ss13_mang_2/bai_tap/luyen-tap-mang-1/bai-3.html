@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a= parseInt(prompt())
+    let b= []
+    let c=0
+    for (let i=0; i< a; i++){
+      b[i]=parseInt(prompt('Nhap so vi tri'));
+    }
+    let max=0;
+    for (let j=0; j< a; j++){
+
+        if (b[j]>max){
+            max=b[j]
+            c+=b[j]
+        }
+    }console.log(max)
+    console.log(c/a)
+</script>
+</body>
+</html>

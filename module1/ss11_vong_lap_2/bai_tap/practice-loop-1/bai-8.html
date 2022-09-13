@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a= prompt('Khoảng muốn đoán: ')
+    let b= Math.floor(Math.random()*a)
+    while (true){
+        let c= parseInt(prompt("nhập số"))
+        if (c===b){
+            alert('Congratulation!')
+            break;
+        }else if (c>b){
+            alert('Lớn hơn rồi, nhập lại đi')
+        }else alert('Bé hơn rồi, nhập lại đi')
+    }
+</script>
+</body>
+</html>

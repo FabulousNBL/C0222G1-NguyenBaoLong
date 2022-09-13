@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a= parseInt(prompt("nhap so luong"))
+    let b=[]
+    for (let i=0;i<a;i++){
+        b[i]=parseInt(prompt())
+    }
+    alert(b.sort(function (a,b) {
+        return (b-a)
+    }))
+    console.log(b)
+</script>
+</body>
+</html>

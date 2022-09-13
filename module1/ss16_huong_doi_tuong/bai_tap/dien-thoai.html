@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class dienThoai{
+        constructor(pin, name, trangthai) {
+            this.pin= pin;
+            this.name= name;
+            this.trangthai= trangthai;
+            this.thuden=[];
+            this.thudangsoan=[];
+            this.thudagui=[];
+        }
+        kiemTra(){
+            --this.pin;
+            console.log('dien thoai dang '+ this.trangthai+', pin: '+ this.pin);
+        }
+        batTat(){
+            this.trangthai=!this.trangthai
+        }
+        xacPin(){
+            if (this.pin < 100){
+                this.pin=100
+            }
+            console.log('pin hien tai cua '+this.name+' la '+ this.pin);
+        }
+        soanTinNhan(message){
+            if (this.pin>0 && this.trangthai) {
+                console.log('da soan tin nhan ' + message)
+                this.thudangsoan.push(message)
+                --this.pin
+                console.log('pin hien tai cua ' + this.name + ' la ' + this.pin)
+            }
+        }
+       guitinnhan(dienthoaiObj) {
+           if (this.pin > 0 && this.trangthai) {
+               dienthoaiObj.thuden.push(this.thudangsoan);
+               --this.pin;
+               console.log('pin hien tai cua ' + this.name + ' la ' + this.pin)
+           }
+       }
+       docTinDen(dienthoaiObj) {
+           if (this.pin > 0 && this.trangthai) {
+               console.log(this.name + 'da nhan duoc tin nhan tu ' + dienthoaiObj.name + ' la ' + this.thuden);
+               --this.pin;
+               console.log('pin hien tai cua ' + this.name + ' la ' + this.pin)
+           }
+       }
+        docThuDaGui() {
+            if (this.pin > 0 && this.trangthai) {
+                console.log(this.thudangsoan)
+                --this.pin;
+                console.log('pin hien tai cua ' + this.name + ' la ' + this.pin)
+            }
+        }
+    }
+    let Nokia=new dienThoai(50,'Nokia',true);
+    let Iphone=new dienThoai(50,'Iphone',true);
+    Nokia.soanTinNhan(prompt('IluveU'));
+    Nokia.guitinnhan(Iphone);
+    Iphone.docTinDen(Nokia)
+</script>
+</body>
+</html>

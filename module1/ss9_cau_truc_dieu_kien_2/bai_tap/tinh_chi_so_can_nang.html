@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt('Enter your weight: '));
+    let b = prompt('Enter your height: ');
+    let c = a/(b*b)
+    switch ((c<18.5)?1:
+        (c<25 && c>=18.5)?2:
+            (c>=25 && c<30)?3:4){
+        case 1:
+            alert('Underweight');
+            break;
+        case 2:
+            alert('Normal');
+            break;
+        case 3:
+            alert('Overweight');
+            break;
+        case 4:
+            alert('Obese');
+            break;
+    }
+</script>
+</body>
+</html>

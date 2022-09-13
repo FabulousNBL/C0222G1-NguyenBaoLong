@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table,h2 {
+            margin-left: 45%;
+        }
+        table {
+            margin-left: 30%;
+        }
+        input {
+            width: 100px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: center;
+        }
+
+        button {
+            width: 100px;
+            border-radius: 10px;
+            margin-left: 47%;
+            margin-bottom: 2%;
+            text-align: center;
+        }
+        div {
+            margin-left: 45%;
+        }
+    </style>
+</head>
+<body>
+<h2>Vé số</h2>
+<input type="button" onclick="muaVe" value="Mua vé số">
+<input type="button" onclick="ketQua" value="Kết quả">
+<p id="hienThi"></p>
+<p id="ketqua"></p>
+<script>
+    function muaVe() {
+        let a = prompt('Số lượng muốn mua')
+        if (a > 4) {
+            alert('Chỉ mua được 4 vé')
+        } else {
+            let b = confirm('Bạn có muốn random vé số?')
+            if (b === true) {
+                let c = '<table >'
+                for (let i = 0; i < a; i++) {
+                    c += '<tr>' + '<th>Vé số ' + (i + 1) + ': ' + '</th>'
+                    for (let j = 0; j < 6; j++) {
+                        let randomNum = Math.floor(Math.random() * 99)
+                        c += '<td><input type="text" style="width: 50px" id="' + i + '' + j + '" value="' + randomNum + '"></td>'
+                    }
+                    c += '</tr>'
+                }
+                c+='</table>'
+                document.getElementById('hienThi').innerHTML=c
+            } else {
+                let c = '<table >'
+                for (let i = 0; i < a; i++) {
+                    c += '<tr>' + '<th>Vé số ' + (i + 1) + ': ' + '</th>'
+                    for (let j = 0; j < 6; j++) {
+                        c += '<td><input type="text" style="width: 50px" id="' + i + '' + j + '"></td>'
+                    }
+                    c += '</tr>'
+                }
+                document.getElementById('hienThi').innerHTML=c
+            }
+        }
+    }
+    function ketQua() {
+        let abc='';
+        let vetrungthuong=[]
+        for (let i=0; i<6;i++){
+            let random=Math.floor(Math.random()*99)
+            vetrungthuong.push(random)
+        }
+        alert('vé trúng thưởng là: '+ vetrungthuong.join(' '))
+        for (let j=0; j<vetrungthuong.length;j++){
+            let count =0;
+            for (let a=0;a<6;a++){
+                let b=j+''+a
+                if (parseInt(document.getElementById(b).value)===vetrungthuong[a]){
+                    count++
+                    document.getElementById(b).style.backgroundColor = '#CCFDFF'
+            }
+        }
+            if (count<3){
+                abc= 'Vé số '+(j+1)+' : không trúng thưởng'
+            }else if (count<5){
+                abc= 'Vé số '+ (j+1)+' : Trúng giải khuyến khích'
+            }else if (count===5){
+                abc=' Vé số  '+(j+1)+" : Trúng giải nhì"
+            }else if (count===6){
+                abc=' Vé số '+(j+1)+" : Trúng giải nhất"
+            }
+            document.getElementById('ketqua').innerHTML= abc
+        }
+    }
+
+</script>
+</body>
+</html>

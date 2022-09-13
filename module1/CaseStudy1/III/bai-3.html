@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numerator=[5,6,7]
+    let denominator=[7,8,9]
+    let c=[]
+    for (let i = 0; i <numerator.length ; i++) {
+        c.push(numerator[i]/denominator[i])
+    }
+    let max= c[0]
+    let index;
+    for (let j=1;j<c.length;j++){
+        if (max<c[j]){
+            max=c[j]
+            index=j
+        }
+    }
+    console.log('so lon nhat la '+ numerator[index]+'/'+denominator[index]+' vị trí ' + index)
+</script>
+</body>
+</html>

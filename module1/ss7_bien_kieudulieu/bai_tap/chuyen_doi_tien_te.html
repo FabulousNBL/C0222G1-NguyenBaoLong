@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <table>
+        <tr >
+            <th>Amount</th>
+            <th>From currency</th>
+            <th>To currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="text" id="c"></td>
+            <td><select id="chon">
+                <option name="country" value="VND"  >VND</option>
+                <option name="country" value="USD" >USD</option>
+            </select></td>
+            <td><select id="chon1">
+                <option name="country" value="VND2">VND</option>
+                <option name="country" value="USD2">USD</option>
+            </select></td>
+            <td><button type="submit" value="Convert" onclick="doitien()">Convert</button> </td>
+        </tr>
+    </table>
+    Result:<p id="ketqua"> </p>
+
+<script>
+    function doitien() {
+        let dauvao = document.getElementById('c').value;
+        var tinh = dauvao/23000;
+        var tinh2 = dauvao*23000
+        if (document.getElementById('chon').value ==="VND"){
+            if (document.getElementById('chon1').value ==="VND2"){
+                document.getElementById('ketqua').innerHTML= dauvao;
+            }else document.getElementById('ketqua').innerHTML= tinh
+        }else if (document.getElementById('chon1').value ==="VND2"){
+            document.getElementById('ketqua').innerHTML= tinh2;
+        }else document.getElementById('ketqua').innerHTML = dauvao;
+    }
+</script>
+</body>
+</html>

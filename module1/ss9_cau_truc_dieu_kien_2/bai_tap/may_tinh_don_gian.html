@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            width: 40px;
+            height: 20px;
+        }
+        table {
+            margin-left: 35%;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td colspan="4"><input value="" placeholder="0" id="result1" style="text-align: right"></td>
+        </tr>
+        <tr>
+            <td><button onclick="nut('(')">(</button> </td>
+            <td><button onclick="nut(')')">)</button> </td>
+            <td><button onclick="nut('%')">%</button> </td>
+            <td><button onclick="ac()">AC</button> </td>
+        </tr>
+        <tr>
+            <td><button onclick="nut('7')">7</button> </td>
+            <td><button onclick="nut('8')">8</button> </td>
+            <td><button onclick="nut('9')">9</button> </td>
+            <td><button onclick="nut('/')">/</button> </td>
+        </tr>
+        <tr>
+            <td><button onclick="nut('4')">4</button> </td>
+            <td><button onclick="nut('5')">5</button> </td>
+            <td><button onclick="nut('6')">6</button> </td>
+            <td><button onclick="nut('*')">x</button> </td>
+        </tr>
+        <tr>
+            <td><button onclick="nut('1')">1</button> </td>
+            <td><button onclick="nut('2')">2</button> </td>
+            <td><button onclick="nut('3')">3</button> </td>
+            <td><button onclick="nut('-')">-</button> </td>
+        </tr>
+        <tr>
+            <td><button onclick="nut('0')">0</button> </td>
+            <td><button onclick="nut('.')">.</button> </td>
+            <td><button onclick="bang()">=</button> </td>
+            <td><button onclick="nut('+')">+</button> </td>
+        </tr>
+    </table>
+    <script>
+        function nut(value) {
+            document.getElementById('result1').value  += value;
+        }
+        function ac() {
+            document.getElementById('result1').value = "";
+        }
+        function bang() {
+            let total= eval(document.getElementById('result1').value);
+            document.getElementById('result1').value = total;
+        }
+    </script>
+</body>
+</html>

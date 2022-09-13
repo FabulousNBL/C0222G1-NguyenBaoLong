@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function hoVaTen(str) {
+    //     let arr = [];
+    //     for (let i = 0, j = 1; i < str.length; i++, j++) {
+    //         if (str[i] === ' ' && str[j] === ' ') {
+    //         } else if (i === 0) {
+    //             arr.push(str[i].toUpperCase())
+    //         } else if (str[i - 1] === ' ' && str[i] !== ' ') {
+    //             arr.push(str[i].toUpperCase())
+    //         } else {
+    //             arr.push(str[i].toLowerCase())
+    //         }
+    //     }
+    //     return arr.join('')
+    // }
+    // let str1 = '  đâ  ada'
+    // document.write(hoVaTen(str1))
+    function fullName(str) {
+        let arr=[];
+        for (let i=0,j=1;i<str.length;i++,j++) {
+            if (str[i] === " " && str[j] === " ") {
+            } else if (i === 0 ) {
+                arr.push(str[i].toUpperCase())
+            } else if (str[i-1] === " " && str[i] !== " ") {
+                arr.push(str[i].toUpperCase())
+            } else {
+                arr.push(str[i].toLowerCase())
+            }
+        }
+        return arr.join('')
+    }
+    let str1="  nguyen bAo lOnG"
+    console.log(fullName(str1))
+</script>
+</body>
+</html>

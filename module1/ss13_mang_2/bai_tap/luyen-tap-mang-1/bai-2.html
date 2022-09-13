@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = []
+
+    for (let i = 0; i < 10; i++) {
+        let b = parseInt(prompt())
+        a.push(b)
+    }
+    let max = a[0]
+    for (let j = 1; j <= a.length; j++) {
+
+        if (a[j] > max) {
+            max = a[j]
+            index= j
+        }console.log(max)
+    }
+    alert("max: "+ max + 'at position ' + index)
+</script>
+</body>
+</html>

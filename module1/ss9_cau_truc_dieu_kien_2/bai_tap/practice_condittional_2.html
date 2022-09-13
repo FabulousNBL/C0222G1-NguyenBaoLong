@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>Bài 6</h2>
+    <input type="text" id="soa" placeholder="Nhập số a">
+    <input type="text" id="sob" placeholder="Nhập số b">
+    <input type="button" onclick="kq61()" value="Tính">
+    <p id="kqb6"></p>
+    <script>
+        function kq61() {
+            let a6 = parseInt(document.getElementById('soa').value);
+            let b6 = parseInt(document.getElementById('sob').value);
+            let c = -(b6 / a6);
+            if (a6 === 0 || b6 === 0) {
+                document.getElementById('kqb6').innerHTML = "Phương trình vô nghiệm "
+            } else {
+                document.getElementById('kqb6').innerHTML = "Phương trình có 1 nghiệm là:" + c
+            }
+        }
+    </script>
+</div>
+<div>
+    <h2>Bài 7</h2>
+    <input type="text" id="soa7" placeholder="Nhập số a">
+    <input type="text" id="sob7" placeholder="Nhập số b">
+    <input type="text" id="soc7" placeholder="Nhập số c">
+    <input type="button" onclick="kq7()" value="Kết quả">
+    <p id="kq7"></p>
+    <script>
+        function kq7() {
+            let a7 = parseInt(document.getElementById('soa7').value);
+            let b7 = parseInt(document.getElementById('sob7').value);
+            let c7 = parseInt(document.getElementById('soc7').value);
+            let del = Math.pow(b7, 2) - 4 * (a7 * c7)
+            let x1 = (-b7 + Math.sqrt(del)) / (2 * a7)
+            let x2 = (-b7 - Math.sqrt(del)) / (2 * a7)
+            if (a7 !== 0) {
+                if (del < 0) {
+                    document.getElementById('kq7').innerHTML = "Phương trình vô nghiệm";
+                } else if (del === 0) {
+                    document.getElementById('kq7').innerHTML = "Phương trình có nghiệm kép x1 = x2 =" + -(b7 / (2 * a7));
+                } else {
+                    document.getElementById('kq7').innerHTML = "Phương trình có 2 nghiệm" + " x1 =" + x1 + " và x2= " + x2;
+                }
+            } else {
+                document.getElementById('kq7').innerHTML = " Phương trình vô nghiệm"
+            }
+        }
+    </script>
+</div>
+<div>
+    <h2>Bài 8</h2>
+    <input type="text" id="st" placeholder="Nhập số tuổi">
+    <input type="button" onclick="kq8()" value="Kiểm tra">
+    <p id="kq8"></p>
+    <script>
+        function kq8() {
+            let a8 = parseInt(document.getElementById('st').value);
+            if (a8 > 0 && a8 < 120) {
+                document.getElementById('kq8').innerHTML = "Bạn đã nhập số tuổi"
+            } else {
+                document.getElementById('kq8').innerHTML = "Bạn đã nhập sai số tuổi"
+            }
+        }
+    </script>
+</div>
+<div>
+    <h2>Bài 9</h2>
+    <input type="text" id="ca" placeholder="Nhập cạnh a">
+    <input type="text" id="cb" placeholder="Nhập cạnh b">
+    <input type="text" id="cc" placeholder="Nhập cạnh c">
+    <input type="button" onclick="kt9()" value="Kiểm tra">
+    <p id="kq9"></p>
+    <script>
+        function kt9() {
+            let a9 = parseInt(document.getElementById('ca').value);
+            let b9 = parseInt(document.getElementById('cb').value);
+            let c9 = parseInt(document.getElementById('cc').value);
+            if (a9 > 0 && b9 > 0 && c9 > 0) {
+                if (((a9 + b9) > c9) && ((b9 + c9) > a9) && ((a9 + c9) > b9)) {
+                    document.getElementById('kq9').innerHTML = "a, b, c là cạnh của 1 tam giác"
+                } else
+                    document.getElementById('kq9').innerHTML = "a, b, c không phải là cạnh của 1 tam giác"
+
+            }else
+                document.getElementById('kq9').innerHTML = "a, b, c không phải là cạnh của 1 tam giác"
+
+        }
+    </script>
+</div>
+<div>
+    <h2>Bài 10</h2>
+    <input type="text" id="td" placeholder="Nhập số điện tiêu thụ (kWh)">
+    <input type="button" onclick="kq10()" value="Tính tiền">
+    <p id="kq10"></p>
+    <script>
+        function kq10() {
+            let a = parseInt(document.getElementById('td').value);
+            let td1 = a * 2242;
+            document.getElementById('kq10').innerHTML=" Tiền điện tháng này là: " + td1
+        }
+    </script>
+</div>
+<div>
+    <h2>Bài 11</h2>
+    <input type="text" id="slr" placeholder="Thu nhập hàng tháng:">
+    <input type="button" onclick="kq11()" value="Tính">
+    <p id="kq11"></p>
+    <script>
+        function kq11() {
+            let slr = parseInt(document.getElementById('slr').value);
+            if (slr >= 80000000) {
+                document.getElementById('kq11').innerHTML= "Thuế thu nhập của bạn là: " + (slr*35/100);
+            }else if (slr < 80000000 && slr >= 52000000){
+                document.getElementById('kq11').innerHTML= "Thuế thu nhập của bạn là: " + (slr*30/100);
+            }else if (slr < 52000000 && slr >= 32000000){
+                document.getElementById('kq11').innerHTML= "Thuế thu nhập của bạn là: " + (slr*25/100);
+            }else if (slr < 32000000 && slr >= 18000000){
+                document.getElementById('kq11').innerHTML= "Thuế thu nhập của bạn là: " + (slr*20/100);
+            }else if (slr < 18000000 && slr >= 10000000){
+                document.getElementById('kq11').innerHTML= "Thuế thu nhập của bạn là: " + (slr*15/100);
+            }else if (slr <10000000 && slr >= 5000000){
+                document.getElementById('kq11').innerHTML= "Thuế thu nhập của bạn là: " + (slr*10/100);
+            }else if (slr < 5000000 ){
+                document.getElementById('kq11').innerHTML= "Thuế thu nhập của bạn là: " + (slr*5/100);
+            }else document.getElementById('kq11').innerHTML= ""
+        }
+    </script>
+</div>
+<div>
+    <h2>Bài 12</h2>
+    <input type="text" id="mny" placeholder="Nhập số tiền">
+    <input type="text" id="rate" placeholder="Nhập lãi xuất">
+    <input type="text" id="mth" placeholder="Nhập số tháng muốn gửi">
+    <input type="button" onclick="calcu()" value="Tính">
+    <p id="kq12"></p>
+    <script>
+        function calcu() {
+            let tien= parseInt(document.getElementById('mny').value);
+            let tile= parseFloat(document.getElementById('rate').value);
+            let thang= parseInt(document.getElementById('mth').value);
+            if (thang <= 6){
+            }
+            let lai= tien*(tile*0.01)*thang
+            document.getElementById('kq12').innerHTML="Lãi xuất của bạn là: " + lai
+        }
+    </script>
+</div>
+</body>
+</html>

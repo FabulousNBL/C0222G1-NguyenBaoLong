@@ -1,0 +1,20 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str1='abcacd';
+    let b=str1.split('').sort()
+    let bjoin=b.join('')
+    let dif=[]
+    for (let i=0,j=1;i<bjoin.length;i++,j++){
+        if (bjoin[i]!==bjoin[j]){
+            dif.push(bjoin[i])
+        }
+    }console.log(dif)
+</script>
+</body>
+</html>

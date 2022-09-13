@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature{
+        constructor(temperature) {
+            this.temperature= temperature;
+        }
+        transferToF(){
+            let f;
+            f= (this.temperature*1.8)-32;
+            console.log(f)
+        }
+        transferToK(){
+            let k;
+            k= (this.temperature) + 273.15
+            console.log(k)
+        }
+    }
+    let temperature1= new Temperature(2)
+    temperature1.transferToF()
+    temperature1.transferToK()
+</script>
+</body>
+</html>

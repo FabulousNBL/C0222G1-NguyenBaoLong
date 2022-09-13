@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str='aabcchkjh';
+    let str1='abcaafgh';
+    // let a=str.split('').sort()
+    // let b=str1.split('').sort()
+    let c=[]
+    // for (let i=0;i< str.length;i++){
+    //     if (a[i]===b[i]){
+    //         c.push(b[i])
+    //     }
+    // }console.log(c)
+    for (let i = 0; i < str.length; i++) {
+        for (let j = 0; j <str1.length ; j++) {
+            if (str[i]===str1[j]){
+                c.push(str[i]);
+                str1=str1.replace(str1[j],'');
+                break;
+            }
+        }
+    }
+console.log(c)
+</script>
+</body>
+</html>

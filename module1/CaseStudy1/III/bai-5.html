@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Menu</h2>
+<p >1. Cafe                10.000 Đ</p>
+<p >2. Cam vắt             15.000 Đ</p>
+<p >3. Nước ép cà chua     20.000 Đ</p>
+<p >4. Nước ép cà rốt      20.000 Đ</p>
+<p >5. Nước dùa            20.000 Đ</p>
+<p >6. Nước lọc            10.000 Đ</p>
+<p >7. Thoát gọi món</p>
+<input type="button" onclick="chon()" value="Chọn món">
+<script>
+    function chon() {
+        let a = [
+            [1, 2, 3, 4, 5, 6,7],
+            [10000, 15000, 20000, 20000, 20000, 10000]
+        ]
+        let d=0;
+        for (let i = 0; i < a[0].length; i++) {
+            let b = parseInt(prompt("Nhập món số: "))
+            if (b === 7) {
+                break;
+            } else {
+                let c = parseInt(prompt("Nhập số lượng món: "))
+                d += c * a[1][i]
+            }
+        }
+        alert("Hóa đơn của bạn là: " + d)
+        }
+
+</script>
+</body>
+</html>

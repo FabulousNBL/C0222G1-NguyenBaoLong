@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>Bài 1</h2>
+    <input type="text" id="so1">
+    <input type="text" id="so2">
+    <input type="button" onclick="sosanh()" value="compare"><br>
+    <p id="ketqua"></p>
+    <script>
+        function sosanh(){
+            let x = parseInt(document.getElementById('so1').value);
+            let y = parseInt(document.getElementById('so2').value);
+            if (x % y === 0) {
+                document.getElementById('ketqua').innerHTML= "a chia het cho b";
+            } else {
+                document.getElementById('ketqua').innerHTML= "a khong chia het cho b";
+            }
+        }
+    </script>
+</div>
+<div>
+    <h2>Bài 2</h2>
+    <input type="text" id="tuoi" >
+    <input type="button" onclick="qe()" value="Xem">
+    <p id="thongbao"></p>
+    <script>
+        function qe() {
+            let age = parseInt(document.getElementById('tuoi').value);
+            if (age < 16) {
+                document.getElementById('thongbao').innerHTML = "Hoc sinh khong du dieu kien hoc lop 10"
+            } else {
+                document.getElementById('thongbao').innerHTML = "Hoc sinh du dieu kien hoc lop 10"
+            }
+        }
+    </script>
+</div>
+<div>
+    <h2>Bài 3</h2>
+    <input type="text" id="xe">
+    <input type="button" onclick="ok()" value="ok">
+    <p id="kq"></p>
+    <script>
+        function ok() {
+            let a1 =parseInt(document.getElementById("xe").value);
+            if (a1>0){
+                document.getElementById('kq').innerHTML= "Số vừa nhập lớn hơn 0";
+            }else if(a1<0){
+                document.getElementById('kq').innerHTML= "Số vừa nhập nhỏ hơn 0";
+            }else {
+                document.getElementById('kq').innerHTML= "Số vừa nhập bằng 0";
+            }
+        }
+    </script>
+</div>
+<div>
+    <h2>Bài 4</h2>
+    <input type="text" id="soa1">
+    <input type="text" id="sob1">
+    <input type="text" id="soc1">
+    <input type="button" onclick="cp()" value="cpare">
+    <p id="ss"></p>
+    <script>
+        function cp() {
+            let a = parseInt(document.getElementById('soa1').value);
+            let b = parseInt(document.getElementById('sob1').value);
+            let c = parseInt(document.getElementById('soc1').value);
+            if (a >= b && a > c) {
+                document.getElementById('ss').innerHTML = a + " là số lớn nhất";
+                } else if (b >= c && b > a) {
+                    document.getElementById('ss').innerHTML = b + " là số lớn nhất";
+                    } else if (c >= b && c > a) {
+                        document.getElementById('ss').innerHTML = c + " là số lớn nhất";
+                        } else if (a >= c && a > b) {
+                            document.getElementById('ss').innerHTML = a + " là số lớn nhất";
+                            } else if (b >= a && b > c) {
+                                document.getElementById('ss').innerHTML = b + " là số lớn nhất";
+                                } else if (c >= a && c > b) {
+                                    document.getElementById('ss').innerHTML = c + " là số lớn nhất";
+                                    } else if(c===a && c===b) {
+                                        document.getElementById("ss").innerHTML = " 3 số bằng nhau";
+                                        }else {
+                                            document.getElementById('ss').innerHTML = ""
+            }
+        }
+    </script>
+</div>
+<div>
+    <h2>Bài 5</h2>
+    <table>
+        <tr>
+            <th>STT</th>
+            <th>Họ và tên</th>
+            <th>Kiểm tra 15p</th>
+            <th>Kiểm tra giữa kỳ</th>
+            <th>Kiểm tra cuối kỳ</th>
+            <th><button onclick="tk()"> Tổng kết</button></th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Nguyễn Văn A</td>
+            <td><input type="text" id="d15p1"></td>
+            <td><input type="text" id="dgk1"></td>
+            <td><input type="text" id="dck1"></td>
+            <td><p id="tk1"></p></td>
+        </tr>
+    </table>
+    <script>
+        function tk() {
+            let d15 = parseInt(document.getElementById('d15p1').value);
+            let dgk = parseInt(document.getElementById('dgk1').value);
+            let dck = parseInt(document.getElementById('dck1').value);
+            let tongket = (d15 + dgk*2 + dck*3)/6;
+            if (tongket >= 8){
+                document.getElementById('tk1').innerHTML= "Học sinh giỏi";
+                }else if (tongket <8 && tongket >= 6.5){
+                    document.getElementById('tk1').innerHTML= "Học sinh khá";
+                    }else if (tongket < 6.5 && tongket >=5){
+                        document.getElementById('tk1').innerHTML= "Học sinh trung bình";
+                        }else if (tongket < 5) {
+                            document.getElementById('tk1').innerHTML= "Học sinh yếu";
+                            } else {
+                                document.getElementById('tk1').innerHTML= "";
+            }
+        }
+    </script>
+</div>
+<div>
+    <h2>Bài 6</h2>
+    <input type="text" id="dso" placeholder="Nhập doanh số">
+    <input  id="hh" placeholder="Nhập % hoa hồng">
+    <input type="button" onclick="calc()" value="Tính">
+    <p id="thh"></p>
+    <script>
+        function calc() {
+            let a = parseInt(document.getElementById('dso').value);
+            let b = parseInt(document.getElementById('hh').value);
+            let c = a * b / 100
+            document.getElementById('thh').innerHTML= "Hoa hồng nhận được là: " + c
+        }
+    </script>
+</div>
+<div>
+    <h2>Bài 7</h2>
+    <input type="text" id="sp" placeholder="Nhập số phút đã gọi">
+    <input type="button" onclick="klk()" value="Tính">
+    <p id="tt"></p>
+    <script>
+        function klk() {
+            let spdg= parseInt(document.getElementById('sp').value);
+            let tien= spdg * 1000;
+            document.getElementById('tt').innerHTML= "Cước điện thoại của bạn là: " + tien
+        }
+    </script>
+</div>
+</body>
+</html>
